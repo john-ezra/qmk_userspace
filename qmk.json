@@ -1,6 +1,7 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["mesa/mesa_tkl", "ezra"]
+        ["mesa/mesa_tkl", "ezra"],
+        ["wilba_tech/wt75_c", "ezra"]
     ]
 }
