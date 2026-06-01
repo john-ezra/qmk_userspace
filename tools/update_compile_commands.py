@@ -80,6 +80,56 @@ def record_target(record: dict) -> tuple[str | None, str | None]:
     return define_value(args, "QMK_KEYBOARD"), define_value(args, "QMK_KEYMAP")
 
 
+def resolve_record_file(record: dict) -> Path | None:
+    file = record.get("file")
+    if not isinstance(file, str) or not file:
+        return None
+
+    path = Path(file).expanduser()
+    if not path.is_absolute() and record.get("directory"):
+        path = Path(record["directory"]) / path
+    return path.resolve()
+
+
+def keymap_c_path(record: dict) -> Path | None:
+    value = define_value(record_args(record), "KEYMAP_C")
+    if not value:
+        return None
+
+    path = Path(value).expanduser()
+    if not path.is_absolute() and record.get("directory"):
+        path = Path(record["directory"]) / path
+    return path.resolve()
+
+
+def synthesize_keymap_record(records: list[dict], keyboard: str, keymap: str) -> dict | None:
+    candidates = [record for record in records if record_target(record) == (keyboard, keymap) and keymap_c_path(record)]
+    if not candidates:
+        return None
+
+    candidates.sort(key=lambda record: 0 if str(record.get("file", "")).endswith("default_keyboard.c") else 1)
+    base = candidates[0]
+    keymap_path = keymap_c_path(base)
+    if any(resolve_record_file(record) == keymap_path for record in records):
+        return None
+
+    source = base.get("file")
+    args = list(record_args(base))
+    replaced = False
+    for index, arg in enumerate(args):
+        if arg == source or arg.endswith("/default_keyboard.c"):
+            args[index] = str(keymap_path)
+            replaced = True
+            break
+
+    if not replaced:
+        raise SystemExit(f"Could not find source argument for {keyboard}:{keymap}")
+
+    record = {**base, "arguments": args, "file": str(keymap_path)}
+    record.pop("command", None)
+    return record
+
+
 def load_compile_commands(path: Path) -> list[dict]:
     if not path.exists():
         return []
@@ -118,7 +168,11 @@ def generate_target_database(qmk_home: Path, userspace: Path, keyboard: str, key
             ok = write_compilation_database(command=command, output_path=output, skip_clean=True, **qmk_env)
             if not ok:
                 raise SystemExit(f"Failed to generate compile database for {keyboard}:{keymap}")
-            return load_compile_commands(output)
+            records = load_compile_commands(output)
+            keymap_record = synthesize_keymap_record(records, keyboard, keymap)
+            if keymap_record:
+                records.append(keymap_record)
+            return records
     finally:
         os.chdir(old_cwd)
 
