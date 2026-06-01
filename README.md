@@ -39,6 +39,15 @@ This is a template repository which allows for an external set of QMK keymaps to
 
 Alternatively, if you configured your build targets above, you can use `qmk userspace-compile` to build all of your userspace targets at once.
 
+## Howto update clangd/Zed diagnostics
+
+This repository keeps `compile_commands.json` ignored because it is generated for the local machine. After adding a new keyboard keymap, compile it once, then update the clangd database for just that target:
+
+1. `qmk compile -kb <keyboard> -km <keymap>`
+1. `make compiledb KB=<keyboard> KM=<keymap>`
+
+To rebuild the database for every target in `qmk.json`, run `make compiledb-all`.
+
 ## Extra info
 
 If you wish to point GitHub actions to a different repository, a different branch, or even a different keymap name, you can modify `.github/workflows/build_binaries.yml` to suit your needs.
