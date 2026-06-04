@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_PGUP, KC_TAB,  KC_Z,    KC_R,    KC_L,    KC_D,    KC_W,    KC_Y,    KC_P,    KC_U,    KC_X,    KC_Q,    KC_LBRC, KC_RBRC, KC_BSLS,
         KC_PGDN, KC_BSPC, KC_H,    KC_N,    KC_T,    KC_S,    KC_C,    KC_B,    KC_I,    KC_E,    KC_O,    KC_A,    KC_QUOT,          KC_ENT,
                  KC_LSFT, KC_K,    KC_V,    KC_M,    KC_F,    KC_G,    KC_G,    KC_J,    KC_SCLN, KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_RALT,
-                 KC_LCTL,                   KC_LGUI, KC_SPC,  MO(_FN),          KC_SPC,           KC_RGUI,                            KC_RCTL
+                 KC_LCTL,                   MO(_FN), KC_SPC,  KC_LGUI,          KC_SPC,           MO(_FN),                            KC_RCTL
     ),
 
     [_FN] = LAYOUT_alice_split_bs(
