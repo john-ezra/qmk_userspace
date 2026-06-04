@@ -2,6 +2,7 @@
     "userspace_version": "1.1",
     "build_targets": [
         ["hineybush/physix", "ezra"],
+        ["linworks/dolice", "ezra"],
         ["mesa/mesa_tkl", "ezra"],
         ["wilba_tech/wt65_h1", "ezra"],
         ["wilba_tech/wt75_c", "ezra"]
