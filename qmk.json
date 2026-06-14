@@ -4,6 +4,7 @@
         ["hineybush/physix", "ezra"],
         ["linworks/dolice", "ezra"],
         ["mesa/mesa_tkl", "ezra"],
+        ["owlab/link65/hotswap", "ezra"],
         ["smithrune/magnus/m75h", "ezra"],
         ["wilba_tech/wt65_h1", "ezra"],
         ["wilba_tech/wt75_c", "ezra"]
