@@ -3,6 +3,7 @@
     "build_targets": [
         ["ai03/vega", "ezra"],
         ["hineybush/physix", "ezra"],
+        ["ilumkb/primus75", "ezra"],
         ["linworks/dolice", "ezra"],
         ["mesa/mesa_tkl", "ezra"],
         ["owlab/link65/hotswap", "ezra"],
