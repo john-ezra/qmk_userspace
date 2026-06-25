@@ -2,6 +2,7 @@
     "userspace_version": "1.1",
     "build_targets": [
         ["ai03/vega", "ezra"],
+        ["akb/ogr", "ezra"],
         ["hineybush/physix", "ezra"],
         ["ilumkb/primus75", "ezra"],
         ["linworks/dolice", "ezra"],
