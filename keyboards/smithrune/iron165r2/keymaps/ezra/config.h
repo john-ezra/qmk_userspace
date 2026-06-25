@@ -1,0 +1,12 @@
+#pragma once
+
+#undef LINE_RGBS
+#undef RUNE_RGBS
+#undef LUKE_RGBS
+#undef RGBLIGHT_LED_MAP
+#undef RGBLIGHT_DEFAULT_ON
+#undef RGBLIGHT_DEFAULT_VAL
+
+#define RGBLIGHT_LED_MAP {17, 0, 1, 2, 3, 18, 20, 16, 4, 5, 6, 7, 8, 9, 10, 11, 19, 12, 13, 14, 15, 21}
+#define RGBLIGHT_DEFAULT_ON true
+#define RGBLIGHT_DEFAULT_VAL 128
