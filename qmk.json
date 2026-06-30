@@ -11,6 +11,7 @@
         ["mesa/mesa_tkl", "ezra"],
         ["owlab/link65/hotswap", "ezra"],
         ["owlab/spring", "ezra"],
+        ["smithrune/iron160/iron160_s", "ezra"],
         ["smithrune/iron165r2/f411", "ezra"],
         ["smithrune/magnus/m75h", "ezra"],
         ["typek", "ezra"],
