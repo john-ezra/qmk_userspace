@@ -3,6 +3,7 @@
     "build_targets": [
         ["ai03/vega", "ezra"],
         ["akb/ogr", "ezra"],
+        ["bowl/pangea_mini", "ezra"],
         ["cannonkeys/vector", "ezra"],
         ["exclusive/e7v2", "ezra"],
         ["hineybush/physix", "ezra"],
