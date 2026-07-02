@@ -6,6 +6,8 @@ enum layers {
     _FN,
 };
 
+#define TAPPING_TERM 150
+
 #define SUP_TAB LGUI_T(KC_TAB)
 #define SUP_ENT RGUI_T(KC_ENT)
 
