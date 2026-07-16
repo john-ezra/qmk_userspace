@@ -15,6 +15,7 @@
         ["mesa/mesa_tkl", "ezra"],
         ["mode/m256wh", "ezra"],
         ["mode/m75h", "ezra"],
+        ["mode/m75s", "ezra"],
         ["owlab/link65/hotswap", "ezra"],
         ["owlab/spring", "ezra"],
         ["owlab/suit80/ansi", "ezra"],
