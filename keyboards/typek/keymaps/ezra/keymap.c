@@ -10,6 +10,8 @@ enum layers {
 
 
 #define TG_ADJ TG(_ADJUST)
+#define SUP_ESC LGUI_T(KC_ESC)
+#define SUP_ENT LGUI_T(KC_ENT)
 
 // Keep the keymap in visual TypeK order while feeding QMK's matrix-ordered LAYOUT_all.
 #define LAYOUT_typek_visual( \
@@ -33,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_PGUP, KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,             KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC, KC_RBRC, KC_BSPC,
         KC_PGDN, KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,             KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,          KC_ENT,
         TG_ADJ,  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,             KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_RALT,
-                 KC_LCTL,          KC_LGUI, KC_SPC,  MO(_FN),                   MO(_FN), KC_SPC,  KC_RGUI,                            KC_RCTL
+                 KC_LCTL,          MO(_FN), KC_SPC,  KC_LGUI,                   KC_RGUI, KC_SPC,  MO(_FN),                            KC_RCTL
     ),
 
     [_FN] = LAYOUT_typek_visual(
@@ -52,3 +54,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  _______, _______,          _______, _______,                   _______, _______, _______,                            _______
     ),
 };
+
