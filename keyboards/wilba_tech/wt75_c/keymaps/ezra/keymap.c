@@ -7,7 +7,6 @@ enum layers {
     _GAME,
 };
 
-
 #define TG_GAME TG(_GAME)
 #define SUP_ESC LGUI_T(KC_ESC)
 #define SUP_ENT RGUI_T(KC_ENT)
