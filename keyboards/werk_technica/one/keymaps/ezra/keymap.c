@@ -8,8 +8,6 @@ enum layers {
 
 #define SUP_ESC LGUI_T(KC_ESC)
 #define SUP_ENT RGUI_T(KC_ENT)
-#define FN_TAB LT(_FN, KC_TAB)
-#define FN_BSPC LT(_FN, KC_BSPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_75_ansi(
