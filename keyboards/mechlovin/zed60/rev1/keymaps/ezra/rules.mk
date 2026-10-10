@@ -1,3 +1,5 @@
+RGBLIGHT_ENABLE = no
+
 # Flash with tools/stm32duino_dfu.py instead of dfu-util: dfu-util resets the
 # board unconditionally once the bootloader reports dfuMANIFEST-WAIT-RESET, the
 # board does not answer the SET_ADDRESS that follows, and the kernel's recovery

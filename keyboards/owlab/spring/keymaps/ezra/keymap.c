@@ -23,3 +23,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  _______, _______,          _______, _______, _______, _______,                            _______, _______, _______
     ),
 };
+
+// Turn the underglow off at every boot. RGBLIGHT_ENABLE = no is not an option
+// here: the board's spring.c calls rgblight functions unconditionally and does
+// not build without them. This keymap has no key that turns it back on.
+void keyboard_post_init_user(void) {
+    rgblight_disable_noeeprom();
+}

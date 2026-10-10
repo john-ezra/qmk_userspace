@@ -1,5 +1,8 @@
 #include "keycodes.h"
 #include QMK_KEYBOARD_H
+#include "keyboards/wilba_tech/wt_mono_backlight.h"
+
+extern backlight_config g_config;
 
 enum layers {
     _COLEMAK,
@@ -41,3 +44,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_BSPC, KC_LALT,                            KC_SPC,                    KC_RALT, KC_RCTL,                   KC_LEFT, KC_DOWN, KC_RGHT
     ),
 };
+
+// Force the backlight to effect 0 (all off) at every boot, overriding the
+// value the board loads from EEPROM. The Caps Lock and Scroll Lock indicators
+// run through the same IS31FL3736 as the backlight, so the driver stays
+// enabled to keep them working. This keymap has no key that changes the effect.
+void keyboard_post_init_user(void) {
+    g_config.effect = 0;
+}
