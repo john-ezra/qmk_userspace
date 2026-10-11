@@ -32,6 +32,7 @@
         ["mesa/mesa_tkl", "ezra"],
         ["mode/m256wh", "ezra"],
         ["mode/m75s", "ezra"],
+        ["otus_engineering/otus60", "ezra"],
         ["owlab/jelly_epoch/soldered", "ezra"],
         ["owlab/link65/hotswap", "ezra"],
         ["owlab/spring", "ezra"],
