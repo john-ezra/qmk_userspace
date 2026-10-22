@@ -9,6 +9,7 @@ enum layers {
 
 #define SUP_ESC LGUI_T(KC_ESC)
 #define SUP_ENT RGUI_T(KC_ENT)
+#define CTL_ALT RCTL_T(KC_RALT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_ansi_blocker(
