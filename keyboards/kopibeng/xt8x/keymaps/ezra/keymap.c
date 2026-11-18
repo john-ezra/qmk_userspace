@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 //
-// TGR Jane 2.5 on a kopibeng XT8x PCB. LAYOUT_all exposes the F13 top row
-// ([0,1]..[0,13]); a standard F12 plate has no switch at [0,1] and F1..F12 sit
-// at [0,2]..[0,13], so that slot is left transparent. Absent positions (ISO
-// backslash, first right-hand 1.25u bottom key) are left transparent.
+// TGR Jane 2.5 on a kopibeng XT8x PCB: ANSI with an F12 top row, 2U Backspace,
+// 2.75U Right Shift, and a 7U Tsangan bottom row.
 
 #include "keycodes.h"
 #include QMK_KEYBOARD_H
@@ -17,21 +15,21 @@ enum layers {
 #define SUP_ENT RGUI_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_COLEMAK] = LAYOUT_all(
-        KC_ESC,   _______,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,           KC_PSCR, KC_SCRL, KC_PAUS,
-        KC_GRV,   KC_1,     KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  _______, KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC, KC_RBRC, KC_BSLS,          KC_DEL,  KC_END,  KC_PGDN,
-        SUP_ESC,  KC_A,     KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,          SUP_ENT,
-        KC_LSFT,  _______,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_RALT,                   KC_UP,
-        KC_LCTL,  KC_LGUI,  KC_LALT,                            KC_SPC,                             _______, KC_RALT, KC_RGUI, KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
+    [_COLEMAK] = LAYOUT_tkl_ansi_tsangan(
+        KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,           KC_PSCR, KC_SCRL, KC_PAUS,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,          KC_INS,  KC_HOME, KC_PGUP,
+        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC, KC_RBRC, KC_BSLS,          KC_DEL,  KC_END,  KC_PGDN,
+        SUP_ESC, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,          SUP_ENT,
+        KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT,                   KC_UP,
+        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                                      KC_RALT, KC_RGUI, KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
-    [_FN] = LAYOUT_all(
-        QK_BOOT,  _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
-        _______,  _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______,  _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
-        _______,  _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______,  _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,
-        _______,  _______,  _______,                            _______,                            _______, _______, _______, _______,          _______, _______, _______
+    [_FN] = LAYOUT_tkl_ansi_tsangan(
+        QK_BOOT,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+        _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,                   _______,
+        _______, _______, _______,                            _______,                                     _______, _______, _______,          _______, _______, _______
     ),
 };
