@@ -11,6 +11,7 @@ enum layers {
 
 #define SUP_ESC LGUI_T(KC_ESC)
 #define SUP_ENT RGUI_T(KC_ENT)
+#define CTL_ALT RCTL_T(KC_RALT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_60_ansi_tsangan_split_rshift(
@@ -18,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC, KC_RBRC, KC_BSLS,
         SUP_ESC, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,          SUP_ENT,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, MO(_FN),
-        KC_LCTL, MO(_FN), KC_LALT,                            KC_SPC,                                      KC_RALT, MO(_FN), KC_RCTL
+        KC_LCTL, MO(_FN), KC_LALT,                            KC_SPC,                                      CTL_ALT, MO(_FN), MO(_FN)
     ),
 
     [_FN] = LAYOUT_60_ansi_tsangan_split_rshift(
@@ -26,6 +27,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, KC_PGDN, KC_PGUP, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, _______,          _______, _______,
-        _______, _______, _______,                            KC_LCTL,                                     _______, _______, _______
+        _______, _______, _______,                            KC_LALT,                                     _______, _______, _______
     ),
 };
